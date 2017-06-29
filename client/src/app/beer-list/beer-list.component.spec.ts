@@ -3,6 +3,8 @@ import { MaterialModule } from '@angular/material';
 
 import { BeerListComponent } from './beer-list.component';
 import { StormpathModule } from 'angular-stormpath';
+import { BeerService } from '../shared/beer/beer.service';
+import { GiphyService } from '../shared/giphy/giphy.service';
 
 describe('BeerListComponent', () => {
   let component: BeerListComponent;
@@ -11,7 +13,8 @@ describe('BeerListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BeerListComponent],
-      imports: [MaterialModule, StormpathModule]
+      imports: [MaterialModule, StormpathModule],
+      providers: [BeerService, GiphyService]
     })
     .compileComponents();
   }));

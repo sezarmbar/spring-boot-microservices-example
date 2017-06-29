@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { StormpathConfiguration } from 'angular-stormpath';
 import { Observable } from 'rxjs';
+import { StormpathConfiguration } from 'angular-stormpath';
 
 @Injectable()
 export class BeerService {
