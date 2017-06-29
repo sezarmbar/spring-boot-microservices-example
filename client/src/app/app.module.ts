@@ -18,6 +18,15 @@ export function stormpathConfig(): StormpathConfiguration {
   return spConfig;
 }
 
+import { StormpathConfiguration, StormpathModule } from 'angular-stormpath';
+
+export function stormpathConfig(): StormpathConfiguration {
+  let spConfig: StormpathConfiguration = new StormpathConfiguration();
+  spConfig.endpointPrefix = 'http://localhost:8081';
+  spConfig.autoAuthorizedUris.push(new RegExp(spConfig.endpointPrefix + '/*'));
+  return spConfig;
+}
+
 @NgModule({
   declarations: [
     AppComponent,

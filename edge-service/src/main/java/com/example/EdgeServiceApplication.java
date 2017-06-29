@@ -2,7 +2,6 @@ package com.example;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import com.stormpath.sdk.servlet.account.AccountStringResolver;
 import com.stormpath.sdk.servlet.http.Resolver;
 import feign.RequestInterceptor;
 import lombok.Data;
@@ -16,7 +15,9 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.hateoas.Resources;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Collection;

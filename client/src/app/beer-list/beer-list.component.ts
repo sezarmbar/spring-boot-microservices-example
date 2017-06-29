@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BeerService, GiphyService } from '../shared';
+import { BeerService } from '../shared/beer/beer.service';
+import { GiphyService } from '../shared/giphy/giphy.service';
 import { Stormpath } from 'angular-stormpath';
 
 @Component({
@@ -10,8 +11,7 @@ import { Stormpath } from 'angular-stormpath';
 export class BeerListComponent implements OnInit {
   beers: Array<any>;
 
-  constructor(private beerService: BeerService,
-              private giphyService: GiphyService,
+  constructor(private beerService: BeerService, private giphyService: GiphyService,
               private stormpath: Stormpath) {
     // beerService is called when the app first loads, but hidden
     // because of this, it's not called again after login
