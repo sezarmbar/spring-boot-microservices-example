@@ -82,7 +82,7 @@ stormpath.zuul.account.header.jwt.key.id=rsatest.pub.pem
 ```
 
 Copy the `rsatest.*` files from the [Stormpath Zuul example project](https://github.com/stormpath/stormpath-sdk-java/tree/master/examples/zuul-spring-cloud-starter/src/main/resources), 
-or create new ones using the following. 
+or create new ones using the following command: 
 
 ```bash
 openssl genrsa -out rsatest.priv.pem 2048
@@ -411,6 +411,9 @@ and navigating to `http://localhost:8081/home`. You should see a login page, pro
 
 ![Stormpath Zuul Login](static/zuul-login.png)
 
+This page is served up from the `tormpath-zuul-spring-cloud-starter` using [Thymeleaf](http://www.thymeleaf.org/). Spring 
+Boot auto-activates Thymeleaf when it finds it in the classpath. 
+
 After logging in, you should see a page displaying your user's information.
 
 ![Stormpath Zuul Home](static/zuul-home.png)
@@ -529,7 +532,8 @@ Then modify `.angular-cli.json` to add it to the styles array:
 
 ### Verify Authentication Works
 
-Navigate to <http://localhost:4200>, and you should see a login form like the following. 
+Navigate to <http://localhost:4200>, and you should see a login form like the following. The login form you see below
+is rendered by the `<sp-authport>` component. In addition to authentication, it supports registration and forgot password.
 
 ![Angular Login](static/angular-login.png)
 
